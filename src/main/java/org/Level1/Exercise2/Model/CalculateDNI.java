@@ -1,4 +1,4 @@
-package org.Exercise2.Model;
+package org.Level1.Exercise2.Model;
 
 public class CalculateDNI {
 

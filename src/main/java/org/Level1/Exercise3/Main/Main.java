@@ -1,6 +1,6 @@
-package org.Exercise3.Main;
+package org.Level1.Exercise3.Main;
 
-import org.Exercise3.Model.Array;
+import org.Level1.Exercise3.Model.Array;
 
 public class Main {
     public static void main(String[] args) {

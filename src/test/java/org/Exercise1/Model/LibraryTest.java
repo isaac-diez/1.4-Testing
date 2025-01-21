@@ -1,5 +1,7 @@
 package org.Exercise1.Model;
 
+import org.Level1.Exercise1.Model.Book;
+import org.Level1.Exercise1.Model.Library;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

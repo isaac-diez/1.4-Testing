@@ -1,5 +1,6 @@
 package org.Exercise2.Model;
 
+import org.Level1.Exercise2.Model.CalculateDNI;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package org.Exercise3.Model;
+package org.Level1.Exercise3.Model;
 
 public class Array {
 

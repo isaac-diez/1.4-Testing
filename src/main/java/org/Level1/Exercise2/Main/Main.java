@@ -1,6 +1,6 @@
-package org.Exercise2.Main;
+package org.Level1.Exercise2.Main;
 
-import org.Exercise2.Model.CalculateDNI;
+import org.Level1.Exercise2.Model.CalculateDNI;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.Exercise1.Model;
+package org.Level1.Exercise1.Model;
 
 import java.util.ArrayList;
 import java.util.Iterator;

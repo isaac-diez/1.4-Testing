@@ -1,7 +1,7 @@
-package org.Exercise1.Main;
+package org.Level1.Exercise1.Main;
 
-import org.Exercise1.Model.Book;
-import org.Exercise1.Model.Library;
+import org.Level1.Exercise1.Model.Book;
+import org.Level1.Exercise1.Model.Library;
 
 public class Main {
     public static void main(String[] args) {
