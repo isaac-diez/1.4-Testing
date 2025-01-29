@@ -26,6 +26,9 @@ public class Calculator {
 
     public Double divide(Double num1, Double num2) {
 
+        if (num2 == 0) {
+            throw new ArithmeticException("Can't divide by 0");
+        }
         return num1 / num2;
 
     }

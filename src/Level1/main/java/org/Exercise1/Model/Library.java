@@ -1,6 +1,8 @@
 package org.Exercise1.Model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 
 public class Library {
@@ -51,6 +53,13 @@ public class Library {
 
     public void fullCatalog() {
         if (!this.library.isEmpty()) {
+
+            Collections.sort(this.library, new Comparator<>() {
+                @Override
+                public int compare(Book book1, Book book2) {
+                    return book1.getTitle().compareTo(book2.getTitle());
+                }
+            });
 
             for (Book book : this.library) {
                 System.out.println(book);

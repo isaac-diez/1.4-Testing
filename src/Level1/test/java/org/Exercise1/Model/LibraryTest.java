@@ -3,6 +3,10 @@ package org.Exercise1.Model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -16,8 +20,10 @@ class LibraryTest {
         libraryTest.addBook(new Book("1984", "George Orwell", 1949));
         libraryTest.addBook(new Book("Brave New World", "Aldous Huxley", 1932));
         libraryTest.addBook(new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925));
+        libraryTest.addBook(new Book("Moby-Dick", "Herman Melville", 1851));
+        libraryTest.addBook(new Book("War and Peace", "Leo Tolstoy", 1869));
+        libraryTest.addBook(new Book("The Hobbit", "J.R.R. Tolkien", 1937));
 
-        System.out.println(libraryTest);
     }
 
     @Test
@@ -76,6 +82,44 @@ class LibraryTest {
     }
 
     @Test
-    void deleteBookByTitle() {
+    void testLibraryStaysAlphabeticallySortedAfterAddingBook() {
+
+        libraryTest.addBook(new Book("Pride and Prejudice", "Jane Austen", 1813));
+
+
+        Collections.sort(libraryTest.getLibrary(), new Comparator<>() {
+            @Override
+            public int compare(Book book1, Book book2) {
+                return book1.getTitle().compareTo(book2.getTitle());
+            }
+        });
+
+        assertEquals("1984", libraryTest.getBookByPosition(0), "book title should be 1984");
+        assertEquals("Brave New World", libraryTest.getBookByPosition(1), "book title should be Brave New World");
+        assertEquals("Moby-Dick", libraryTest.getBookByPosition(2), "book title should be Moby-Dick");
+        assertEquals("Pride and Prejudice", libraryTest.getBookByPosition(3), "book title should be Pride and Prejudice");
+        assertEquals("The Great Gatsby", libraryTest.getBookByPosition(4), "book title should be The Great Gatsby");
+        assertEquals("The Hobbit", libraryTest.getBookByPosition(5), "book title should be The Hobbit");
+        assertEquals("War and Peace", libraryTest.getBookByPosition(6), "book title should be War and Peace");
+    }
+
+    @Test
+    void testLibraryStaysAlphabeticallySortedAfterDeletingBook() {
+
+        libraryTest.deleteBookByTitle("Moby-Dick");
+
+        Collections.sort(libraryTest.getLibrary(), new Comparator<>() {
+            @Override
+            public int compare(Book book1, Book book2) {
+                return book1.getTitle().compareTo(book2.getTitle());
+            }
+        });
+
+        assertEquals("1984", libraryTest.getBookByPosition(0), "book title should be 1984");
+        assertEquals("Brave New World", libraryTest.getBookByPosition(1), "book title should be Brave New World");
+        assertEquals("The Great Gatsby", libraryTest.getBookByPosition(2), "book title should be The Great Gatsby");
+        assertEquals("The Hobbit", libraryTest.getBookByPosition(3), "book title should be The Hobbit");
+        assertEquals("War and Peace", libraryTest.getBookByPosition(4), "book title should be War and Peace");
+
     }
 }

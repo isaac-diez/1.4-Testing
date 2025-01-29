@@ -2,8 +2,8 @@ package org.level3Exer1.Model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.within;
+
+import static org.assertj.core.api.Assertions.*;
 
 public class TestCalculator {
 
@@ -45,6 +45,14 @@ public class TestCalculator {
         Double divide = casio.divide(12.2,2.5);
 
         assertThat(divide).isCloseTo(4.88, within(0.0001));
+    }
+
+    @Test
+    public void testDivisionByZero() {
+
+        assertThatThrownBy(() -> casio.divide(12.2,0.0))
+                .isInstanceOf(ArithmeticException.class)
+                .hasMessageContaining("Can't divide by 0");
     }
 
 

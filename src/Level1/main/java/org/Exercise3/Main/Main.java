@@ -7,9 +7,14 @@ public class Main {
 
         Array numbers = new Array();
 
-        numbers.getArrayElementByIndex(3);
-        numbers.getArrayElementByIndex(4);
-        numbers.getArrayElementByIndex(5);
+        try {
+            numbers.getArrayElementByIndex(3);
+            numbers.getArrayElementByIndex(4);
+            numbers.getArrayElementByIndex(5);
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error Index Out of Bounds: " + e.getMessage());
+        }
 
 
 

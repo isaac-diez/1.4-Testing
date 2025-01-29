@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println(hp.multiply(4.3,8.6));
 
-        System.out.println(hp.divide(20.11,3.14));
+        System.out.println(hp.divide(20.11,10.3));
 
     }
 }
